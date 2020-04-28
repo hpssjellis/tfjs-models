@@ -19,9 +19,13 @@
 
 
 
+/**
+
 function tfjsWasm.setWasmPath(
     `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${
         version}/dist/tfjs-backend-wasm.wasm`);
+*/
+
 
 function isMobile() {
   const isAndroid = /Android/i.test(navigator.userAgent);
