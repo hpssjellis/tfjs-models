@@ -194,6 +194,7 @@ async function main() {
   ctx.lineWidth = 0.5;
 
   model = await facemesh.load({maxFaces: state.maxFaces});
+    console.log(model)
   renderPrediction();
 
   if (renderPointcloud) {
