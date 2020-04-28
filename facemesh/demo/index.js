@@ -58,8 +58,8 @@ const renderPointcloud = mobile === false;
 const stats = new Stats();
 const state = {
   backend: 'wasm',
-  maxFaces: 1,
-  triangulateMesh: true
+  maxFaces: 10,
+  triangulateMesh: false
 };
 
 if (renderPointcloud) {
