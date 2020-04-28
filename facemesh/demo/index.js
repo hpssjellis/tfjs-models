@@ -19,7 +19,7 @@
 
 
 
-funciton tfjsWasm.setWasmPath(
+function tfjsWasm.setWasmPath(
     `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${
         version}/dist/tfjs-backend-wasm.wasm`);
 
