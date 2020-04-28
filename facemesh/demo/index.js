@@ -15,15 +15,30 @@
  * =============================================================================
  */
 
-import * as facemesh from '@tensorflow-models/facemesh';
-import Stats from 'stats.js';
-import * as tf from '@tensorflow/tfjs-core';
-import * as tfjsWasm from '@tensorflow/tfjs-backend-wasm';
-// TODO(annxingyuan): read version from tfjsWasm directly once
-// https://github.com/tensorflow/tfjs/pull/2819 is merged.
-import {version} from '@tensorflow/tfjs-backend-wasm/dist/version';
 
-import {TRIANGULATION} from './triangulation';
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>   -->
+ 
+<!-- Adds the WASM backend to the global backend registry -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
+<script>
+tf.setBackend('wasm').then(() => main());
+</script> 
+
+
+//import * as facemesh from '@tensorflow-models/facemesh';
+import Stats from 'stats.js';
+//import * as tf from '@tensorflow/tfjs-core';
+
+
+<script src="triangulation.js"></script>
+
+//import {TRIANGULATION} from './triangulation';
 
 tfjsWasm.setWasmPath(
     `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${
