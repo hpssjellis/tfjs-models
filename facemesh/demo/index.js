@@ -31,8 +31,9 @@ tf.setBackend('wasm').then(() => main());
 </script> 
 
 
+<script src="stats.min.js"></script>
 //import * as facemesh from '@tensorflow-models/facemesh';
-import Stats from 'stats.js';
+//import Stats from 'stats.js';
 //import * as tf from '@tensorflow/tfjs-core';
 
 
