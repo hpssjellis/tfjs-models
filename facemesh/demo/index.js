@@ -119,7 +119,7 @@ async function renderPrediction() {
   if (predictions.length > 0) {
     predictions.forEach(prediction => {
       const keypoints = prediction.scaledMesh;
-
+   console.log(keypoints)
       if (state.triangulateMesh) {
         for (let i = 0; i < TRIANGULATION.length / 3; i++) {
           const points = [
@@ -194,7 +194,7 @@ async function main() {
   ctx.lineWidth = 0.5;
 
   model = await facemesh.load({maxFaces: state.maxFaces});
-    console.log(model)
+   // console.log(model)
   renderPrediction();
 
   if (renderPointcloud) {
