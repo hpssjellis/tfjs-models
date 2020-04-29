@@ -259,7 +259,7 @@ async function renderPrediction() {
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
-}  )()    // end inline function 
+}  
         
  
     ////////////////////////////////////// End my Stuff /////////////////////////////////////////////////           
@@ -285,7 +285,7 @@ async function renderPrediction() {
           ctx.fill();
         }
       }
-    });
+    })();   // end inline function 
 
     if (renderPointcloud && state.renderPointcloud && scatterGL != null) {
       const pointsData = predictions.map(prediction => {
