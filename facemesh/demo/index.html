@@ -224,15 +224,20 @@ async function renderPrediction() {
       video, 0, 0, videoWidth, videoHeight, 0, 0, canvas.width, canvas.height);
 
   if (predictions.length > 0) {
-      
+
+         
+    predictions.forEach(prediction => {
+        
+             
     try  {
-    document.getElementById('myDiv01').innerHTML += 'Confidence = ' + predictions[0].faceInViewConfidence.toFixed(4) + '<br'
+    document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br'
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
-}
-         
-    predictions.forEach(prediction => {
+} 
+        
+        
+        
       const keypoints = prediction.scaledMesh;
  // console.log(keypoints[0][2])
       if (state.triangulateMesh) {
