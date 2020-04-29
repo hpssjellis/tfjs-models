@@ -255,6 +255,8 @@ async function renderPrediction() {
       //    myMask[myIndex] = true
       // }
        console.log(myMask) 
+       console.log(myIndex) 
+       console.log(predictions[myIndex]) 
        document.getElementById('myDiv01').innerHTML += 'Confidence: ' + predictions[myIndex].faceInViewConfidence.toFixed(4) + '<br>'
     }  
       catch(err) {
