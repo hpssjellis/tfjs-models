@@ -113,7 +113,7 @@ async function renderPrediction() {
   stats.begin();
 
   const predictions = await model.estimateFaces(video);
-    console.log(predictions[0].faceInViewConfidence)
+    console.log(predictions)
   ctx.drawImage(
       video, 0, 0, videoWidth, videoHeight, 0, 0, canvas.width, canvas.height);
 
