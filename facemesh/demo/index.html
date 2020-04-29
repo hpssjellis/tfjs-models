@@ -100,6 +100,12 @@ limitations under the License.
 -->
 
 <script>
+    
+    
+    
+    // Global Variables
+    
+    Let myMask = [false,false,false,false,false,false,false,false,false,false]
 
 /**
  * @license
@@ -213,6 +219,12 @@ async function renderPrediction() {
   stats.begin();
 
   const predictions = await model.estimateFaces(video);
+    
+    
+    
+    ////////////////////////////////////// Start my Stuff /////////////////////////////////////////////////    
+    
+    
    // console.log(predictions[0].faceInViewConfidence)
     
     document.getElementById('myDiv01').innerHTML = '' //'Confidence = ' + predictions[0].faceInViewConfidence.toFixed(4)
@@ -226,17 +238,22 @@ async function renderPrediction() {
   if (predictions.length > 0) {
 
          
-    predictions.forEach(prediction => {
-        
+    predictions.forEach(prediction, myIndex => {
              
     try  {
-    document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
+      if (prediction.faceInViewConfidence <= 0.999  ){  
+          myMask[myIndex] = false } else {
+          myMask[myIndex] = true
+       }
+       console.log(myMask) 
+       document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
 } 
         
-        
+ 
+    ////////////////////////////////////// End my Stuff /////////////////////////////////////////////////           
         
       const keypoints = prediction.scaledMesh;
  // console.log(keypoints[0][2])
