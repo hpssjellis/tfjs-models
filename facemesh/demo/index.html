@@ -228,8 +228,8 @@ async function renderPrediction() {
   if (predictions.length > 0) {
     predictions.forEach(prediction => {
       try {
-        document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
-
+       // document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
+       console.log(prediction.faceInViewConfidence.toFixed(4))
       }
       catch(err){
       document.getElementById('myDiv01').innerHTML = err.message;
