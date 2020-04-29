@@ -241,7 +241,13 @@ async function renderPrediction() {
     //predictions.forEach(prediction => {
       
     for (let myIndex=0; myIndex <= predictions.length; myIndex++){  
-      predictions[myIndex] => {
+        
+
+        
+        
+        
+        
+     ( predictions[myIndex]  () => {
              
     try  {
      // if (prediction.faceInViewConfidence <= 0.999  ){  
@@ -253,7 +259,7 @@ async function renderPrediction() {
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
-} 
+}  )()    // end inline function 
         
  
     ////////////////////////////////////// End my Stuff /////////////////////////////////////////////////           
