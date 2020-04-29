@@ -230,7 +230,7 @@ async function renderPrediction() {
         
              
     try  {
-    document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br'
+    document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
