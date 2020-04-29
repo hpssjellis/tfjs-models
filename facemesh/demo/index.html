@@ -241,7 +241,7 @@ async function renderPrediction() {
     //predictions.forEach(prediction => {
       
     for (let myIndex=0; myIndex <= predictions.length; myIndex++){  
-      prediction => {
+      predictions[myIndex] => {
              
     try  {
      // if (prediction.faceInViewConfidence <= 0.999  ){  
@@ -249,7 +249,7 @@ async function renderPrediction() {
       //    myMask[myIndex] = true
       // }
        console.log(myMask) 
-       document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
+       document.getElementById('myDiv01').innerHTML += 'Confidence: ' + predictions[myIndex].faceInViewConfidence.toFixed(4) + '<br>'
     }  
       catch(err) {
      document.getElementById("myDiv01").innerHTML = err.message;
@@ -258,7 +258,7 @@ async function renderPrediction() {
  
     ////////////////////////////////////// End my Stuff /////////////////////////////////////////////////           
         
-      const keypoints = prediction.scaledMesh;
+      const keypoints = predictions[myIndex].scaledMesh;
  // console.log(keypoints[0][2])
       if (state.triangulateMesh) {
         for (let i = 0; i < TRIANGULATION.length / 3; i++) {
