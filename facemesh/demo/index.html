@@ -238,13 +238,13 @@ async function renderPrediction() {
   if (predictions.length > 0) {
 
          
-    predictions.forEach(prediction(myIndex) => {
+    predictions.forEach(prediction, index => {
              
     try  {
-      if (prediction.faceInViewConfidence <= 0.999  ){  
-          myMask[myIndex] = false } else {
-          myMask[myIndex] = true
-       }
+     // if (prediction.faceInViewConfidence <= 0.999  ){  
+      //    myMask[myIndex] = false } else {
+      //    myMask[myIndex] = true
+      // }
        console.log(myMask) 
        document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
     }  
