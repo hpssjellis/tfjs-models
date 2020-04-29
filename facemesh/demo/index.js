@@ -113,13 +113,14 @@ async function renderPrediction() {
   stats.begin();
 
   const predictions = await model.estimateFaces(video);
+    console.log(predictions)
   ctx.drawImage(
       video, 0, 0, videoWidth, videoHeight, 0, 0, canvas.width, canvas.height);
 
   if (predictions.length > 0) {
     predictions.forEach(prediction => {
       const keypoints = prediction.scaledMesh;
-  console.log(keypoints[0][2])
+ // console.log(keypoints[0][2])
       if (state.triangulateMesh) {
         for (let i = 0; i < TRIANGULATION.length / 3; i++) {
           const points = [
