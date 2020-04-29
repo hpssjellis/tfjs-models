@@ -225,7 +225,13 @@ async function renderPrediction() {
 
   if (predictions.length > 0) {
       
+    try  {
     document.getElementById('myDiv01').innerHTML += 'Confidence = ' + predictions[0].faceInViewConfidence.toFixed(4) + '<br'
+    }  
+      catch(err) {
+     document.getElementById("myDiv01").innerHTML = err.message;
+}
+         
     predictions.forEach(prediction => {
       const keypoints = prediction.scaledMesh;
  // console.log(keypoints[0][2])
