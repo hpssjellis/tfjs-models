@@ -286,6 +286,7 @@ async function renderPrediction() {
         }
       }
     })();   // end inline function 
+    } // end for loop    
 
     if (renderPointcloud && state.renderPointcloud && scatterGL != null) {
       const pointsData = predictions.map(prediction => {
