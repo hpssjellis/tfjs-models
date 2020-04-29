@@ -238,7 +238,7 @@ async function renderPrediction() {
   if (predictions.length > 0) {
 
          
-    predictions.forEach(prediction, myIndex => {
+    predictions.forEach(prediction(myIndex) => {
              
     try  {
       if (prediction.faceInViewConfidence <= 0.999  ){  
